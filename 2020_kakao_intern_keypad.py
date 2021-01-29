@@ -7,8 +7,6 @@ def solution(numbers, hand):
                         return i, j
     
     answer = ''
-    l_select = [1, 4, 7]
-    r_select = [3, 6, 9]
     phone_pos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], ['*', 0, '#']]
     l_pos = [3, 0]
     r_pos = [3, 2]
@@ -17,11 +15,11 @@ def solution(numbers, hand):
     r_num_distance = 0
     
     for num in numbers:
-        if num in l_select:
+        if num in [1, 4, 7]:
             answer += 'L'
             l_pos[0], l_pos[1] = find_pos(num)
             
-        elif num in r_select:
+        elif num in [3, 6, 9]:
             answer += 'R'
             r_pos[0], r_pos[1] = find_pos(num)
             
