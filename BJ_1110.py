@@ -12,6 +12,7 @@ def solution(num):
     while new_num != num:
         sum_num = int(temp_num[0]) + int(temp_num[1])
         new_num = temp_num[-1] + str(int(temp_num[0]) + int(temp_num[1]))[-1]
+        print(new_num)
         cycle_val += 1
         temp_num = new_num[:]
         

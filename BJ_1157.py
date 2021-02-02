@@ -7,12 +7,10 @@ def solution(word):
     for alpha in word:
         if alpha in count_dict:
             count_dict[alpha] += 1
-            
         else:
             count_dict[alpha] = 1
         
     for key, value in count_dict.items():
-                
         if value == max(count_dict.values()):
             max_count_key.append(key)
             
