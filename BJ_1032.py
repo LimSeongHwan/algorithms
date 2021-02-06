@@ -26,9 +26,11 @@ def solution(n):
     
     for _ in range(n):
         words.append(list(input()))
-        
+    
     for i in range(len(words[0])):
+
         for j in range(1, len(words)):
+            
             if words[j-1][i] != words[j][i]:
                 same_flag = False
                 res += '?'

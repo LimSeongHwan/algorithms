@@ -37,4 +37,5 @@ def solution(num, num2):
     return ''.join(list(map(str, res)))
 
 num, num2 = map(list, input().split())
+print(num, num2)
 print(solution(num, num2))

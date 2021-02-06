@@ -8,9 +8,8 @@ while True:
     for i in range(len(num)):
         if num[i] != num[(len(num)-1)-i]:
             flag_val = False
-            
-    if flag_val:
-        print("yes")
-        
+            print("no")
+            break
+
     else:
-        print("no")
+        print("yes")
