@@ -10,7 +10,7 @@ def solution(n, m):
             count1 = 0
             count2 = 0
 
-            for k in range(i, i+8):
+            for k in range(i, i+8): 
                 for l in range(j, j+8):
                     if (not (k % 2)):
                         if (not (l % 2)) and chess_area[k][l] != 'B':
@@ -22,7 +22,6 @@ def solution(n, m):
                             count1 += 1
                         elif (l % 2) and chess_area[k][l] != 'B':
                             count1 += 1
-
                     if (not (k % 2)):
                         if (not (l % 2)) and chess_area[k][l] != 'W':
                             count2 += 1
