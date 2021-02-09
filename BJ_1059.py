@@ -12,7 +12,7 @@ def solution(n):
         elif numbers[i] > target:
             idx = i
             break
-
+        
     if idx == 0:
         for i in range(1, numbers[idx]):
             for j in range(i, numbers[idx]):
