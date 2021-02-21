@@ -8,7 +8,6 @@ for i in range(10):
     else:
         if (score + item - target) <= (target - score):
             score += item
-
         print(score)
         break
 
