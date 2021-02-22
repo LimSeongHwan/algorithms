@@ -1,7 +1,7 @@
 word1, word2 = input().split()
 res = [['.'] * len(word1) for _ in range(len(word2))]
 word1_idx = -1
-word1_idx = -1
+word2_idx = -1
 
 for i in range(len(word1)):
     for j in range(len(word2)):
