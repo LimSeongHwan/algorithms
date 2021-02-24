@@ -13,14 +13,11 @@ for i in range(len(word1)):
     if word1_idx >= 0:
         break
 
-for i in range(len(word2)):
-    if i == word2_idx:
-        for k in range(len(word1)):
-            res[i][k] = word1[k]
+for i in range(len(word1)):
+    res[word2_idx][i] = word1[i]
 
-    for j in range(len(word1)):
-        if j == word1_idx:
-            res[i][j] = word2[i]
+for i in range(len(word2)):
+    res[i][word1_idx] = word2[i]
 
 for i in range(len(res)):
     print(''.join(res[i]))
