@@ -1,7 +1,7 @@
 horizon, vertical = map(int, input().split())
 cut_val = int(input())
-cut_horizon = [0,vertical]
-cut_vertical = [0,horizon]
+cut_horizon = [0, vertical]
+cut_vertical = [0, horizon]
 height = 0
 width = 0
 

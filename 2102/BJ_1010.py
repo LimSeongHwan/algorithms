@@ -1,5 +1,4 @@
 def solution(case):
-
     def factorial(number):
         if number == 0:
             return 1
@@ -12,7 +11,7 @@ def solution(case):
     res = factorial(m) / (factorial(n) * factorial(m - n))
     return int(res)
 
+
 case = int(input())
 for _ in range(case):
     print(solution(case))
-        

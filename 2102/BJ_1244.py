@@ -20,8 +20,13 @@ for i in range(student_num):
             switch_status[students[i][1] - 1] = 1
 
         for j in range(switch_num // 2):
-            if (students[i][1] - 1 - j >= 0) and ((students[i][1] - 1 + j) <= (switch_num - 1)):
-                if switch_status[students[i][1] - 1 - j] == switch_status[students[i][1] - 1 + j]:
+            if (students[i][1] - 1 - j >= 0) and (
+                (students[i][1] - 1 + j) <= (switch_num - 1)
+            ):
+                if (
+                    switch_status[students[i][1] - 1 - j]
+                    == switch_status[students[i][1] - 1 + j]
+                ):
                     if switch_status[students[i][1] - 1 - j]:
                         switch_status[students[i][1] - 1 - j] = 0
                     else:
@@ -36,9 +41,9 @@ for i in range(student_num):
 if switch_num > 20:
     if switch_num % 20:
         for i in range((switch_num // 20) + 1):
-            print(' '.join(map(str, switch_status[(i*20):((i*20)+20)])))
+            print(" ".join(map(str, switch_status[(i * 20) : ((i * 20) + 20)])))
     else:
         for i in range(switch_num // 20):
-            print(' '.join(map(str, switch_status[(i*20):((i*20)+20)])))
+            print(" ".join(map(str, switch_status[(i * 20) : ((i * 20) + 20)])))
 else:
-    print(' '.join(map(str, switch_status)))
+    print(" ".join(map(str, switch_status)))

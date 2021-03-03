@@ -23,4 +23,4 @@ for person_num in recommend_person:
         recommend_cnt[person_num] = 1
 
 pictures.sort()
-print(' '.join(map(str, pictures)))
+print(" ".join(map(str, pictures)))

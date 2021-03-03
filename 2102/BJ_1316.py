@@ -21,5 +21,6 @@ def solution(num):
 
     return res
 
+
 num = int(input())
 print(solution(num))

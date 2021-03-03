@@ -3,5 +3,6 @@ def solution(case):
     divisors.sort()
     return divisors[0] * divisors[-1]
 
+
 case = int(input())
 print(solution(case))
