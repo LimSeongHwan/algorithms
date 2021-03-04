@@ -1,17 +1,34 @@
-num_range, num_len = map(int, input().split())
-num = [i for i in range(1, num_range + 1)]
-check = [False] * num_range
+heights = []
+check = [False] * 9
 res = []
+sum_flag = False
+for i in range(9):
+    heights.append(int(input()))
 
-def solution(idx, start):
-    if idx == num_len:
-        print(' '.join(map(str, res)))
-    for i in range(start, num_range):
-        if not check[i]:
-            check[i] = True
-            res.append(num[i])
-            solution(idx+1, i+1)
-            res.pop()
-            check[i] = False
 
-solution(0, 0)
+def solution(idx):
+    global sum_flag
+    if sum_flag:
+        return
+
+    if idx == 9:
+        sum_val = 0
+        res = []
+        for i in range(9):
+            if check[i]:
+                sum_val += heights[i]
+                res.append(heights[i])
+
+        if sum_val == 100 and len(res) == 7:
+            res.sort()
+            sum_flag = True
+            print("\n".join(map(str, res)))
+        return
+
+    check[idx] = True
+    solution(idx + 1)
+    check[idx] = False
+    solution(idx + 1)
+
+
+solution(0)
