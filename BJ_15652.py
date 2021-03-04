@@ -1,5 +1,4 @@
 num_range, num_length = map(int, input().split())
-check = [0] * num_range
 res = [0] * num_length
 
 
@@ -12,9 +11,7 @@ def solution(idx, start):
 
     for i in range(start, num_range):
         res[idx] = i + 1
-        check[i] = 1
         solution(idx + 1, i)
-        check[i] = 0
 
 
 solution(0, 0)
