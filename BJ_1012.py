@@ -24,7 +24,6 @@ for _ in range(case):
     for i in range(cabbage_num):
         x, y = map(int, input().split())
         area[y][x] = 1
-
     for i in range(row):
         for j in range(col):
             if area[i][j]:

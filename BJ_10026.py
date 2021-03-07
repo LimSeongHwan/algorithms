@@ -5,14 +5,11 @@ import copy
 def bfs(y, x, area, color1, color2):
     q = deque([[y, x]])
     area[y][x] = "X"
-
     while q:
         y, x = q.popleft()
-
         for i in range(len(dy)):
             ny = y + dy[i]
             nx = x + dx[i]
-
             if (
                 (0 <= ny <= area_length - 1)
                 and (0 <= nx <= area_length - 1)
