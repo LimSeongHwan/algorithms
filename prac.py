@@ -1,22 +1,33 @@
-for tc in range(int(input())):
-    player = [0] * 11
-    for i in range(11):
-        player[i] = list(map(int, input().split()))
-    visit = [0] * 11
-    max_val = 0
-    res = [0] * 11
+def dfs(y, x, pipe_state, area):
+    global cnt
 
-    def comb(index=0):
-        if index == 11:
-            print(res)
-        else:
-            for i in range(11):
-                if not player[i][index] or visit[i] == 1:
-                    continue
-                visit[i] = 1
-                res[index] = player[i][index]
-                comb(index + 1)
-                visit[i] = 0
+    if (y == (area_length - 1)) and (x == (area_length - 1)):
+        cnt += 1
+        return
 
-    comb()
-    print(max_val)
+    for i in range(len(dy)):
+        if (i == 0) and (pipe_state == 1):
+            continue
+        elif (i == 1) and (pipe_state == 0):
+            continue
+        elif (i == 2) and ((x + 1) <= area_length - 1) and ((y + 1) <= (area_length - 1)) and (area[y][x + 1] or area[y + 1][x]):
+            continue
+        
+        ny = dy[i] + y
+        if (ny >= area_length):
+            continue
+        nx = dx[i] + x
+        if (nx >= area_length):
+            continue
+
+        if (not area[ny][nx]):
+            dfs(ny, nx, i, area)
+
+
+dy = [0, 1, 1]
+dx = [1, 0, 1]
+cnt = 0
+area_length = int(input())
+area = [list(map(int, input().split())) for _ in range(area_length)]
+dfs(0, 1, 0, area)
+print(cnt)

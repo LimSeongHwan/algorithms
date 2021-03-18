@@ -10,8 +10,7 @@ def solution(idx, start):
 target = 6
 info = list(map(int, input().split()))
 while True:
-    num_length = info[0]
-    info = info[1:]
+    num_length = info.pop(0)
     select_num = [0] * target
     solution(0, 0)
     info = list(map(int, input().split()))

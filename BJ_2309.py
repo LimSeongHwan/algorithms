@@ -4,7 +4,7 @@ def solution(idx, start, now_sum):
     if idx == 7:
         if sum(select_height) == 100:
             select_height.sort()
-            print("\n".join(map(str, select_height[2:])))
+            print("\n".join(map(str, select_height)))
     else:
         for i in range(start, 9):
             select_height[idx] = heights[i]
@@ -12,5 +12,5 @@ def solution(idx, start, now_sum):
 
 
 heights = [int(input()) for _ in range(9)]
-select_height = [0] * 9
+select_height = [0] * 7
 solution(0, 0, 0)

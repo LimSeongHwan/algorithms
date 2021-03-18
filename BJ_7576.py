@@ -5,6 +5,7 @@ def bfs(start_list):
     q = deque(start_list)
     tomato_cnt = 0
     max_time = 0
+
     for y, x in q:
         tomato_area[y][x] = -1
 

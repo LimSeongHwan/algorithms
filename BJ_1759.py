@@ -1,7 +1,7 @@
 pass_length, key_length = map(int, input().split())
 pass_keys = sorted(input().split())
 res = [0] * pass_length
-vowel = ["a", "e", "i", "o", "u"]
+vowel = "aeiou"
 count_vowel = 0
 count_cons = 0
 
