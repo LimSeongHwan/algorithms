@@ -10,7 +10,7 @@ def bfs_person(start_y, start_x):
             y, x = q.popleft()
             if (y == (row - 1)) or (x == (col - 1)) or (not y) or (not x):
                 return visited[y][x] + 1
-
+*.
             for i in range(4):
                 ny = dy[i] + y
                 nx = dx[i] + x
