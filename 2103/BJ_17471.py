@@ -1,23 +1,20 @@
 def dfs(target):
     if len(target) == 1:
         return True
-
     visited = dict()
     start_val = target[0]
     compare_list = target[1:]
     visited[start_val] = 1
     q = [start_val]
     cnt = 1
-
+    
     while q:
         v = q.pop()
-
         for next_pos in adj[v]:
             if (next_pos in compare_list) and (next_pos not in visited):
                 visited[next_pos] = 1
                 q.append(next_pos)
                 cnt += 1
-
     if cnt == len(target):
         return True
     return False
