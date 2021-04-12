@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def bfs(start):
     visited = [False] * (case_num + 1)
     visited[start] = True
@@ -13,17 +14,17 @@ def bfs(start):
                 visited[next_pos] = True
                 q.append((next_pos, arr + [next_pos]))
     return -1
-    
-            
+
+
 def haeming_dist(arr1, arr2):
     incorrect = 0
     for i in range(case_length):
         if arr1[i] != arr2[i]:
             incorrect += 1
+            if incorrect > 1:
+                return False
     if incorrect == 1:
         return True
-    else:
-        return False
 
 
 case_num, case_length = map(int, input().split())
