@@ -21,8 +21,7 @@ def bfs(y_idx, x_idx, direct, time):
     dy = [-1, 1, 0, 0]
     dx = [0, 0, -1, 1]
     q = deque([(y_idx, x_idx, direct)])
-    visited = [[0] * col for _ in range(row)]
-    visited[y_idx][x_idx] = 1
+    area[y_idx][x_idx] = 8
     cnt = 1
 
     while q:
@@ -35,7 +34,7 @@ def bfs(y_idx, x_idx, direct, time):
                 nx = dx[direct] + x
                 flag = False
 
-                if (0 <= ny < row) and (0 <= nx < col) and area[ny][nx] and (not visited[ny][nx]):
+                if (0 <= ny < row) and (0 <= nx < col) and area[ny][nx] and (area[ny][nx] != 8):
                     if direct == 0:
                         if (area[ny][nx] not in [3, 4, 7]):
                             flag = True
@@ -51,7 +50,7 @@ def bfs(y_idx, x_idx, direct, time):
 
                     if flag:
                         q.append((ny, nx, area[ny][nx]))
-                        visited[ny][nx] = 1
+                        area[ny][nx] = 8
                         cnt += 1
 
         time -= 1
